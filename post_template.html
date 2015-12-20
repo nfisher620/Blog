@@ -1,0 +1,33 @@
+
+
+<div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" ng-style="{'background-image': 'url(./{{pc.entry_display.image}})'} ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>{{ pc.entry_display.title }}</h1>
+                    <h2 class="subheading">{{ pc.entry_display.summary }}</h2>
+                    <span class="meta">Posted by <a href="#">{{ pc.entry_display.username }}</a> on {{ pc.entry_display.timestamp }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>{{ pc.entry_display.blog }}</p>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+</div>
+

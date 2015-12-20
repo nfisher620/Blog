@@ -1,0 +1,76 @@
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>User Page</h1>
+                    <hr class="small">
+                    <span class="subheading">
+                        Bio:
+                        Bacon ipsum dolor amet tail turkey beef, salami t-bone meatloaf pork belly pork shoulder short ribs.
+                        Venison picanha salami, cupim pork chop beef ribs alcatra. Doner alcatra porchetta fatback frankfurter.
+                        Salami capicola turducken ball tip. Brisket shoulder cupim, hamburger meatloaf pastrami tongue. Ball tip ham hock sausage pig.
+                        Fatback beef ribs brisket bresaola. Beef ribs kielbasa bresaola flank. Biltong beef ribs fatback cow jerky kielbasa frankfurter
+                        tongue pork chop.Pig kevin strip steak filet mignon doner porchetta.
+                        Does your lorem ipsum text long for something a little meatier? Give our generator a try… it’s tasty!
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <h1>Your Posts</h1>
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            <div class="post-preview" ng-repeat="entry in ac.user_posts">
+                <div class="hover_div" ng-click="ac.call_relay_link_data(entry)">
+                    <h2 class="post-title">
+                        {{ entry.title }}
+                    </h2>
+
+                    <h3 class="post-subtitle">
+                        {{ entry.summary }}
+                    </h3>
+                </div>
+
+                <p class="post-meta">Posted by <a href="#">{{ entry.uid }}</a> on {{ entry.ts }}</p>
+
+                <button id="update_btn" class="btn btn-info btn-xs" ng-click="show_update = !show_update">Update</button>
+                <button id="delete_btn" class="btn btn-danger btn-xs" ng-click="ac.call_remove_entry(entry)">Delete</button>
+
+                <div ng-show="show_update">
+                    <h4>Update Entry</h4>
+
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"></span>
+                        <input type="text" class="form-control" ng-model="ac.entry.user" placeholder="Username">
+                    </div>
+                    <div class="form-group input-group">
+                    <span class="input-group-addon">
+                    </span>
+                        <input type="text" class="form-control" ng-model="ac.entry.title" placeholder="Title">
+                    </div>
+                    <div class="form-group input-group">
+                    <span class="input-group-addon">
+                    </span>
+                        <textarea class="form-control" rows="10" ng-model="ac.entry.blog" placeholder="Body"></textarea>
+                    </div>
+
+                    <button class="btn btn-success" type="submit" ng-click="ac.call_update_entry(entry); show_update = !show_update">Update</button>
+                    <button type="button" class="btn btn-default" ng-click="show_update = !show_update">Cancel</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
